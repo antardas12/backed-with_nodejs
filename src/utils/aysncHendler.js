@@ -1,7 +1,7 @@
-const asyncHendler = (requstHendaler) =>{
-    (req,res,next) =>{
-        Promise.resolve(requstHendaler(req,res,next))
-        .catch((error) => next(error));
+const asyncHendler = (requstHendaler) => {
+    return (req, res, next) => {
+        Promise.resolve(requstHendaler(req, res, next))
+            .catch((error) => next(error));
     }
 }
 
